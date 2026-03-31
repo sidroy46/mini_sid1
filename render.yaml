@@ -1,11 +1,9 @@
 services:
   - type: web
     name: backend
-    runtime: java
+    runtime: docker
     plan: free
     rootDir: backend
-    buildCommand: mvn clean package
-    startCommand: java -jar target/*.jar
     envVars:
       - key: PORT
         value: 8082
