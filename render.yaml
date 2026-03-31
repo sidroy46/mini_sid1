@@ -12,6 +12,12 @@ services:
           type: web
           name: face-ai
           property: host
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d75li5kr85hc73cos150-a/faceattendence_db
+      - key: SPRING_DATASOURCE_USERNAME
+        value: faceattendence_db_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: THBtE0vrM5ZztSzAQhcTLGEyemkdMr0P
 
   - type: web
     name: face-ai
