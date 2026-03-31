@@ -41,8 +41,8 @@ public class ProjectDataService {
 
     private final Path faceUploadDir = Paths.get("uploads", "faces");
     private final Path faceAiDatasetDir = Paths.get("..", "face-ai", "dataset");
-    private final String faceRecognizeUrl = "http://127.0.0.1:5000/recognize";
-    private final String faceReloadUrl = "http://127.0.0.1:5000/reload-faces";
+    private final String faceRecognizeUrl = "http://localhost:5000/recognize";
+    private final String faceReloadUrl = "http://localhost:5000/reload-faces";
     private final HttpClient httpClient = HttpClient.newHttpClient();
 
     public ProjectDataService(

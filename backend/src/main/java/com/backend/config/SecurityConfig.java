@@ -1,4 +1,4 @@
-package com.backend;
+package com.backend.config;
 
 import com.backend.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Value;
