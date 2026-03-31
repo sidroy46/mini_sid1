@@ -41,8 +41,15 @@ public class ProjectDataService {
 
     private final Path faceUploadDir = Paths.get("uploads", "faces");
     private final Path faceAiDatasetDir = Paths.get("..", "face-ai", "dataset");
-    private final String faceRecognizeUrl = "http://localhost:5000/recognize";
-    private final String faceReloadUrl = "http://localhost:5000/reload-faces";
+    private String faceRecognizeUrl;
+    private String faceReloadUrl;
+
+    @org.springframework.beans.factory.annotation.Value("${FACE_AI_HOST:http://localhost:5000}")
+    public void setFaceAiHost(String host) {
+        String base = host.startsWith("http") ? host : "https://" + host;
+        this.faceRecognizeUrl = base + "/recognize";
+        this.faceReloadUrl = base + "/reload-faces";
+    }
     private final HttpClient httpClient = HttpClient.newHttpClient();
 
     public ProjectDataService(
