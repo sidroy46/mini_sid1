@@ -13,11 +13,11 @@ services:
           name: face-ai
           property: host
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://dpg-d75li5kr85hc73cos150-a/faceattendence_db
+        sync: false
       - key: SPRING_DATASOURCE_USERNAME
-        value: faceattendence_db_user
+        sync: false
       - key: SPRING_DATASOURCE_PASSWORD
-        value: THBtE0vrM5ZztSzAQhcTLGEyemkdMr0P
+        sync: false
 
   - type: web
     name: face-ai
@@ -33,7 +33,7 @@ services:
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    startCommand: npx serve -s build
+    startCommand: npx serve -s build -l $PORT
     envVars:
       - key: REACT_APP_API_URL
         value: https://backend.onrender.com
