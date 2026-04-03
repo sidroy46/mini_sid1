@@ -48,6 +48,9 @@ models/
 backend/uploads/
 
 # Local installers / binaries
-*.exeface-ai/.venv311/
-face-ai/.venv311/
 *.exe
+
+# Local Python envs
+face-ai/.venv/
+face-ai/.venv311/
+
